@@ -2,7 +2,7 @@ import React from 'react';
 import Filter from './components/Filter';
 import Recipe from './components/Recipe';
 import './styles.css'
-
+import dataJson from './data.json'
 
 export default function App() {
     const [optionsData, setOptionsData] = React.useState({
@@ -10,6 +10,7 @@ export default function App() {
       diet: '', 
       ingr: 5
     });  
+    const [resultRecipe, setResultRecipe] = React.useState({});
 
     // React.useEffect(() => {
     //   const axios = require("axios");
@@ -36,15 +37,39 @@ export default function App() {
     //   });
     // }, [optionsData])
 
+    // React.useEffect(() => {
+    //   const axios = require("axios");
 
+    const getData=()=>{
+        console.log("input data :" + optionsData.q + optionsData.diet + optionsData.ingr)
+        // after fetching data
+        // pass data to get random recipe function
+        getRandomRecipe()
+
+        // console.log('hits length')
+        // console.log(dataJson['hits'].length)
+    }
+    React.useEffect(()=>{
+        getData()
+    },[optionsData])
+
+    // normally it will take fetched data
+    function getRandomRecipe() {
+        let len = dataJson['hits'].length;
+        let randomNum = Math.floor(Math.random() * len);
+        // console.log('random number and random object')
+        // console.log(randomNum)
+        setResultRecipe(dataJson['hits'][randomNum]['recipe'])
+    }
+    
 
     function handleFilter(data) {
         setOptionsData(data)
     }
     return (
         <div className='container'>
-           {/* <Filter handleFilter={handleFilter}/> */}
-           <Recipe />
+           <Filter handleFilter={handleFilter}/>
+           <Recipe  resultRecipe={resultRecipe} />
         </div>
     );
 }

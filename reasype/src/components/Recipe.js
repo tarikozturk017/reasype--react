@@ -1,9 +1,35 @@
 import React from "react";
 
-export default function Recipe() {
+export default function Recipe(props) {
+    const dietTypes = returnInP(props.resultRecipe.dietLabels)
+    const mealTypes = returnInP(props.resultRecipe.mealType)
+    const healhLabels = returnInLi(props.resultRecipe.healthLabels)
+    const cautions = returnInLi(props.resultRecipe.cautions)
+    const ingredientLines = returnInLi(props.resultRecipe.ingredientLines)
+    const calories = parseFloat(props.resultRecipe.calories).toFixed(2)
+
+
+    function returnInP(arr) {
+        let str = ""
+        if (arr){
+            arr.map(e => str+=`${e} `)
+            // console.log(str);
+        }
+        return str;
+    }
+
+    function returnInLi(arr) {
+        let obj
+        if (arr){
+            obj = arr.map((e) => <li>{e}</li>)
+        }
+        return obj;
+    }
+
+    console.log(props.resultRecipe)
     return (
         <div className="recipe--container">
-            <div className="recipe--header"><h1>Chicken and Stuffing Casserole</h1></div>
+            <div className="recipe--header"><h1>{props.resultRecipe.label}</h1></div>
             <div className="image-container">
                 <img src="https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg?w=2000" 
                 alt=""
@@ -12,29 +38,27 @@ export default function Recipe() {
             </div>
             <div className="recipe--ingredients">
                 <ul>
-                    <li>1 (6-ounce) package stuffing, such as STOVE TOP Stuffing Mix for Chicken</li>
-                    <li>1 1/2 ounce boneless skinless chicken breasts</li>
-                    <li>1 can (10 3/4 ounce) condensed cream of chicken soup</li>
-                    <li>1/3 cup butter or sour cream, such as BREAKSTONES</li>
-                    <li>1 (16-ounce) package frozen mixed vegetables</li>
+                    {ingredientLines}
                 </ul>
             </div>
-            <div className="recipe--source"><a href="http://www.goodhousekeeping.com/food-recipes/a12680/chicken-sausage-pepper-onion-heros-121734/">Click to see the full recipe</a> Food52</div>
+            <div className="recipe--source">
+                <a href={props.resultRecipe.url}>Click here to see the directions</a> 
+                {props.resultRecipe.source}
+            </div>
             <div className="recipe--information">
-                <p className="calories">590 Calories</p>
-                <p className="diet-type">Balanced</p>
-                <p className="dish-type">Dinner</p>
-                <p className="yield">Yield 6 people</p>
-                <p className="cuisine-type">Italian</p>
+                <p className="calories">{calories} Calories</p>
+                <div className="diet-type">{dietTypes}</div>
+                <p className="meal-type">{mealTypes}</p>
+                <p className="yield">Yield {props.resultRecipe.yield} people</p>
+                <p className="cuisine-type">{props.resultRecipe.cuisineType}</p>
                 <div className="health-labels">Health Labels:
-                    <ul>
-                        <li>Sugar-Conscious</li>
-                        <li>Peanut-Free</li>
-                    </ul>
+                     <ul>
+                        {healhLabels}   
+                    </ul> 
                 </div>
                 <div className="cautions">Cautions:
                     <ul>
-                        <li>Soy</li>
+                        {cautions}
                     </ul>
                 </div>
                 
