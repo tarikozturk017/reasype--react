@@ -68,7 +68,7 @@ export default function App() {
     }
     return (
         <div className='container'>
-           <Filter handleFilter={handleFilter}/>
+           {/* <Filter handleFilter={handleFilter}/> */}
            <Recipe  resultRecipe={resultRecipe} />
         </div>
     );

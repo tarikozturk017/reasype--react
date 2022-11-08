@@ -7,7 +7,7 @@ export default function Recipe(props) {
     const cautions = returnInLi(props.resultRecipe.cautions)
     const ingredientLines = returnInLi(props.resultRecipe.ingredientLines)
     const calories = parseFloat(props.resultRecipe.calories).toFixed(2)
-
+    const dishType = returnInP(props.resultRecipe.dishType)
 
     function returnInP(arr) {
         let str = ""
@@ -37,32 +37,36 @@ export default function Recipe(props) {
                 </img>
             </div>
             <div className="recipe--ingredients">
+                <h3>Ingredients</h3>
                 <ul>
                     {ingredientLines}
                 </ul>
             </div>
             <div className="recipe--source">
                 <a href={props.resultRecipe.url}>Click here to see the directions</a> 
-                {props.resultRecipe.source}
+                <p>Source: {props.resultRecipe.source}</p>
             </div>
             <div className="recipe--information">
-                <p className="calories">{calories} Calories</p>
-                <div className="diet-type">{dietTypes}</div>
-                <p className="meal-type">{mealTypes}</p>
-                <p className="yield">Yield {props.resultRecipe.yield} people</p>
-                <p className="cuisine-type">{props.resultRecipe.cuisineType}</p>
-                <div className="health-labels">Health Labels:
-                     <ul>
-                        {healhLabels}   
-                    </ul> 
-                </div>
-                <div className="cautions">Cautions:
-                    <ul>
-                        {cautions}
-                    </ul>
-                </div>
-                
+                <h3>Information</h3>
+                <div className="calories">{calories} Calories</div>
+                <div className="yield">Serves for {props.resultRecipe.yield} people</div>
+                <div className="diet-type">Diet type:   {dietTypes}</div>
+                <div className="meal-type">Meal type:   {mealTypes}</div>
+                <div className="dish-type">Dish type:   {dishType}</div>
+                <div className="cuisine-type">Cuisine type: {props.resultRecipe.cuisineType}</div>
             </div>
+            <div className="labels--container">
+                    <div className="label"><p>Health Labels</p>
+                        <ul>
+                            {healhLabels}   
+                        </ul> 
+                    </div>
+                    <div className="label"><p>Cautions</p>
+                        <ul>
+                            {cautions}
+                        </ul>
+                    </div>
+                </div>
         </div>
     )
 }
