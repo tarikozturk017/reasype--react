@@ -1,6 +1,7 @@
 import React from 'react';
 import Filter from './components/Filter';
 import Recipe from './components/Recipe';
+import Leftbar from './components/Leftbar';
 import './styles.css'
 import dataJson from './data.json'
 
@@ -67,9 +68,14 @@ export default function App() {
         setOptionsData(data)
     }
     return (
-        <div className='container'>
-           {/* <Filter handleFilter={handleFilter}/> */}
-           <Recipe  resultRecipe={resultRecipe} />
+        <div>
+            <div className='outer--container'>
+            {/* <Leftbar /> */}
+                <div className='container'>
+                    {/* <Filter handleFilter={handleFilter}/> */}
+                    <Recipe  resultRecipe={resultRecipe} />
+                </div>
+            </div>
         </div>
     );
 }
