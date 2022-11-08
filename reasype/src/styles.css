@@ -1,0 +1,44 @@
+*::before, *::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background: linear-gradient(to right, #ECB390, #DF7861);
+    display: flex;
+    justify-content: center;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.container {
+    margin-top: 35px;
+    background-color:  #94B49F;
+    justify-content: center;
+    /* border: 1px solid #FCF8E8; */
+    width: 600px;
+    padding: 25px;
+    border-radius: 15px;
+    -webkit-box-shadow: 5px 5px 5px 0px #FCF8E8, inset 4px 4px 15px 0px #FCF8E8, 2px 5px 7px 5px rgba(252,248,232,0); 
+    box-shadow: 5px 5px 5px 0px #FCF8E8, inset 4px 4px 15px 0px #FCF8E8, 2px 5px 7px 5px rgba(252,248,232,0);
+}
+
+.recipe--header {
+    display: flex;
+    font-style: italic;
+}
+
+.recipe--header > h1{
+    margin: 10px auto 25px auto;
+}
+
+.image-container {
+    display: flex;
+}
+
+.image-container > img {
+    height: 250px;
+    width: auto;
+    margin: 0 auto;
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px 0px #ECB390;
+}

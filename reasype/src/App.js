@@ -1,6 +1,7 @@
 import React from 'react';
 import Filter from './components/Filter';
 import Recipe from './components/Recipe';
+import './styles.css'
 
 
 export default function App() {

@@ -12,7 +12,7 @@ export default function Filter(props) {
     // })
 
     function getRecipe() {
-        const randomNumber = Math.floor(Math.random() * 10)
+        // const randomNumber = Math.floor(Math.random() * 10)
         // const url = allMemeImages[randomNumber].url
         // setMeme(prevMeme => ({
         //     ...prevMeme,
