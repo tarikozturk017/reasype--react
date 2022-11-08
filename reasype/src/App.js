@@ -1,7 +1,6 @@
 import React from 'react';
 import Filter from './components/Filter';
 import Recipe from './components/Recipe';
-import Leftbar from './components/Leftbar';
 import './styles.css'
 import dataJson from './data.json'
 
@@ -12,6 +11,7 @@ export default function App() {
       ingr: 5
     });  
     const [resultRecipe, setResultRecipe] = React.useState({});
+    const [isRecipeGenerated, setIsRecipeGenerated] = React.useState(false);
 
     // React.useEffect(() => {
     //   const axios = require("axios");
@@ -66,14 +66,29 @@ export default function App() {
 
     function handleFilter(data) {
         setOptionsData(data)
+        setIsRecipeGenerated(isRecipeGenerated => !isRecipeGenerated)
+    }
+
+    function resetRecipe(){
+        console.log("reseting old game")
+        setOptionsData({
+            q: '', 
+            diet: '', 
+            ingr: 5
+          });  
+        setIsRecipeGenerated(isRecipeGenerated => !isRecipeGenerated)
     }
     return (
         <div>
             <div className='outer--container'>
             {/* <Leftbar /> */}
                 <div className='container'>
+                    {!isRecipeGenerated ? 
+                        <Filter handleFilter={handleFilter} /> 
+                        : 
+                        <Recipe resetRecipe={resetRecipe} resultRecipe={resultRecipe} />}
                     {/* <Filter handleFilter={handleFilter}/> */}
-                    <Recipe  resultRecipe={resultRecipe} />
+                    {/* <Recipe  resultRecipe={resultRecipe} /> */}
                 </div>
             </div>
         </div>

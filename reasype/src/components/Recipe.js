@@ -71,7 +71,7 @@ export default function Recipe(props) {
                 </div>
             </div>
             <div className="generate-button">
-                <button>Generate New Recipe</button>
+                <button onClick={props.resetRecipe}>New Recipe</button>
             </div>
         </div>
     )
