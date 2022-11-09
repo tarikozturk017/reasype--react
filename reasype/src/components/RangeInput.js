@@ -17,7 +17,10 @@ export default function EnumInput(props) {
     }
 
     function handleRange(){
-        const rangeData = `${range.start}-${range.end}`;
+        let rangeData;
+        if(range.start === '' && range.end !== '')  rangeData = `${range.end}`;
+        else if(range.start !== '' && range.end === '')  rangeData = `${range.start}%2B`; //encode for +
+        else if(range.start !== '' && range.end !== '') rangeData = `${range.start}-${range.end}`;
         props.handleRange(rangeData, range.name)
         setRange({
             name: props.name,

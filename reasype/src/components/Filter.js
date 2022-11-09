@@ -29,7 +29,6 @@ export default function Filter(props) {
         'kidney-friendly', 'kosher', 'low-potassium', 'lupine-free', 'mustard-free', 'low-fat-abs', 
         'No-oil-added', 'low-sugar', 'paleo', 'peanut-free', 'pecatarian', 'pork-free', 'red-meat-free', 
         'sesame-free', 'shellfish-free', 'soy-free', 'sugar-conscious', 'tree-nut-free', 'vegan', 'vegetarian', 'wheat-free']
-
     
     // React.useEffect(() => {
 
@@ -65,7 +64,11 @@ export default function Filter(props) {
         }))
     }
 
+
+
     // TODO
+    //handle data options with arr for enums -> [] when setting. push etc.. to manipulate  
+
     // apply the concept below to the enum types
     // https://www.w3schools.com/howto/howto_js_filter_dropdown.asp
     return (
@@ -183,7 +186,7 @@ export default function Filter(props) {
                 </datalist> */}
 
                 <EnumInput value={recipeData.health} name="health" placeholder="Health label" handleChange={handleChange} options={healths}/>
-
+{/* 
 
                 <input 
                     type="text" //range
@@ -192,15 +195,17 @@ export default function Filter(props) {
                     value={recipeData.calories}
                     onChange={handleChange}
                     name="calories"
-                />
-                <input 
+                /> */}
+                <RangeInput name="calories" handleRange={handleRange} />
+                {/* <input 
                     type="text" //range
                     placeholder="Time"
                     className="form--input"
                     value={recipeData.time}
                     onChange={handleChange}
                     name="time"
-                />
+                /> */}
+                <RangeInput name="time" handleRange={handleRange} />
                 <button 
                     className="form--button"
                     onClick={getRecipe}
@@ -213,7 +218,7 @@ export default function Filter(props) {
                 <h2 className="meme--text top">{meme.topText}</h2>
                 <h2 className="meme--text bottom">{meme.bottomText}</h2>
             </div> */}
-            <RangeInput name="time" handleRange={handleRange} />
+            
         </div>
     )
 }
