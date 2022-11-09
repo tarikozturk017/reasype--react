@@ -4,9 +4,31 @@ export default function Filter(props) {
     const [recipeData, setRecipeData] = React.useState({
         q: '', 
         diet: '', 
-        ingr: 5
+        ingr: 5,
+        excluded: '',
+        dishType: '',
+        mealType: '',
+        cuisineType: '',
+        health: '',
+        calories: '',
+        time: ''
     }) 
 
+    const mealTypes = ['Breakfast', 'Lunch', 'Dinner', 'Snack', 'Teatime']
+    const dishTypes = ['Alcohol-cocktail', 'Biscuits and cookies', 'Bread', 'Cereals', 
+        'Condiments and sauces', 'Drinks', 'Desserts', 'Egg', 'Main course', 'Omelet', 
+        'Pancake', 'Preps', 'Preserve', 'Salad', 'Sandwiches', 'Soup', 'Starter']
+    const cuisineTypes = ['American', 'Asian', 'British', 'Caribbean', 'Central Europe', 
+        'Chinese', 'Eastern Europe', 'French', 'Indian', 'Italian', 'Japanese', 'Kosher', 
+        'Mediterranean', 'Mexican', 'Middle Eastern', 'Nordic', 'South American', 'South East Asian']
+    const diets = ['balanced', 'high-fiber', 'high-protein', 'low-carb', 'low-fat', 'low-sodium']
+    const healths = ['alcohol-free', 'immuno-supportive', 'celery-free', 'crustacean-free', 
+        'dairy-free', 'egg-free', 'fish-free', 'fodmap-free', 'gluten-free', 'keto-friendly', 
+        'kidney-friendly', 'kosher', 'low-potassium', 'lupine-free', 'mustard-free', 'low-fat-abs', 
+        'No-oil-added', 'low-sugar', 'paleo', 'peanut-free', 'pecatarian', 'pork-free', 'red-meat-free', 
+        'sesame-free', 'shellfish-free', 'soy-free', 'sugar-conscious', 'tree-nut-free', 'vegan', 'vegetarian', 'wheat-free']
+
+    
     // React.useEffect(() => {
 
     // })
@@ -37,29 +59,118 @@ export default function Filter(props) {
             
             <div className="form">
                 <input 
-                    type="text"
-                    placeholder="enter q"
+                    type="text" // string
+                    placeholder="Query meal name"
                     className="form--input"
                     value={recipeData.q}
                     onChange={handleChange}
                     name="q"
+                    autoComplete="off"
                 />
-                <input 
+                
+                <input //enum
                     type="text"
                     placeholder="Diet"
                     className="form--input"
                     value={recipeData.diet}
                     onChange={handleChange}
                     name="diet"
+                    list="diet"
                 />
+                <datalist id="diet">
+                    {diets.map((item, key) => 
+                        <option key={key} value={item} />
+                    )}
+                </datalist>
                 <input 
-                    type="number"
+                    type="number" //int
                     placeholder="Max number of ingredients"
                     min="1"
                     className="form--input"
                     value={recipeData.ingr}
                     onChange={handleChange}
                     name="ingr"
+                />
+                <input 
+                    type="text" // string
+                    placeholder="excluded item"
+                    className="form--input"
+                    value={recipeData.excluded}
+                    onChange={handleChange}
+                    name="excluded"
+                    autoComplete="off"
+                />
+                <input 
+                    type="text" //enum
+                    placeholder="Dish type"
+                    className="form--input"
+                    value={recipeData.dishType}
+                    onChange={handleChange}
+                    name="dishType"
+                    list="dishType"
+                />
+                <datalist id="dishType">
+                    {dishTypes.map((item, key) => 
+                        <option key={key} value={item} />
+                    )}
+                </datalist>
+                <input 
+                    type="text" //enum
+                    placeholder="Meal type"
+                    className="form--input"
+                    value={recipeData.mealType}
+                    onChange={handleChange}
+                    name="mealType"
+                    list="mealType"
+                />
+                <datalist id="mealType">
+                    {mealTypes.map((item, key) => 
+                        <option key={key} value={item} />
+                    )}
+                </datalist>
+                <input 
+                    type="text" //enum
+                    placeholder="Cuisine type"
+                    className="form--input"
+                    value={recipeData.cuisineType}
+                    onChange={handleChange}
+                    name="cuisineType"
+                    list="cuisineType"
+                />
+                <datalist id="cuisineType">
+                    {cuisineTypes.map((item, key) => 
+                        <option key={key} value={item} />
+                    )}
+                </datalist>
+                <input 
+                    type="text" //enum
+                    placeholder="Health label"
+                    className="form--input"
+                    value={recipeData.health}
+                    onChange={handleChange}
+                    name="health"
+                    list="health"
+                />
+                <datalist id="health">
+                    {healths.map((item, key) => 
+                        <option key={key} value={item} />
+                    )}
+                </datalist>
+                <input 
+                    type="text" //range
+                    placeholder="Calories"
+                    className="form--input"
+                    value={recipeData.calories}
+                    onChange={handleChange}
+                    name="calories"
+                />
+                <input 
+                    type="text" //range
+                    placeholder="Time"
+                    className="form--input"
+                    value={recipeData.time}
+                    onChange={handleChange}
+                    name="time"
                 />
                 <button 
                     className="form--button"

@@ -8,7 +8,14 @@ export default function App() {
     const [optionsData, setOptionsData] = React.useState({
       q: '', 
       diet: '', 
-      ingr: 5
+      ingr: 5,
+      excluded: '',
+      dishType: '',
+      mealType: '',
+      cuisineType: '',
+      health: '',
+      calories: '',
+      time: ''
     });  
     const [resultRecipe, setResultRecipe] = React.useState({});
     const [isRecipeGenerated, setIsRecipeGenerated] = React.useState(false);
@@ -42,7 +49,8 @@ export default function App() {
     //   const axios = require("axios");
 
     const getData=()=>{
-        console.log("input data :" + optionsData.q + optionsData.diet + optionsData.ingr)
+        console.log("input data :" + optionsData.q + optionsData.diet + optionsData.ingr + optionsData.excluded + 
+        optionsData.dishType + optionsData.mealType + optionsData.cuisineType + optionsData.health + optionsData.calories + optionsData.time)
         // after fetching data
         // pass data to get random recipe function
         getRandomRecipe()
@@ -74,7 +82,14 @@ export default function App() {
         setOptionsData({
             q: '', 
             diet: '', 
-            ingr: 5
+            ingr: 5,
+            excluded: '',
+            dishType: '',
+            mealType: '',
+            cuisineType: '',
+            health: '',
+            calories: '',
+            time: ''
           });  
         setIsRecipeGenerated(isRecipeGenerated => !isRecipeGenerated)
     }
