@@ -1,6 +1,7 @@
 import React from "react";
 import EnumInput from "./EnumInput";
 import RangeInput from "./RangeInput"
+import OldPaper from "../old.webp"
 
 export default function Filter(props) {
     const [recipeData, setRecipeData] = React.useState({
@@ -102,7 +103,7 @@ export default function Filter(props) {
                         <p>Enter a query to search</p>
                         <input // no need to change 
                             type="text" // string
-                            placeholder="Query meal name"
+                            placeholder="Query name"
                             className="form--input"
                             value={recipeData.q}
                             onChange={handleChange}
@@ -129,7 +130,20 @@ export default function Filter(props) {
                     <div className="advanced-element--container" id="advanced-2">
                         <RangeInput name="time" handleRange={handleRange} />
                     </div>
+                    
                     <div className="advanced-element--container" id="advanced-3">
+                        <EnumInput value={recipeData.dishType} name="dishType" placeholder="Dish type" handleEnumChange={handleEnumChange} options={dishTypes}/>
+                    </div>
+                    <div className="advanced-element--container" id="advanced-4">
+                        <EnumInput value={recipeData.mealType} name="mealType" placeholder="Meal type" handleEnumChange={handleEnumChange} options={mealTypes}/>
+                    </div>
+                    <div className="advanced-element--container" id="advanced-5">
+                        <EnumInput value={recipeData.cuisineType} name="cuisineType" placeholder="Cuisine type" handleEnumChange={handleEnumChange} options={cuisineTypes}/>
+                    </div>
+                    <div className="advanced-element--container" id="advanced-6">
+                        <EnumInput value={recipeData.health} name="health" placeholder="Health label" handleEnumChange={handleEnumChange} options={healths}/>
+                    </div>
+                    <div className="advanced-element--container" id="advanced-7">
                         <input 
                             type="text" // string
                             placeholder="excluded item"
@@ -140,24 +154,13 @@ export default function Filter(props) {
                             autoComplete="off"
                         />
                     </div>
-                    <div className="advanced-element--container" id="advanced-4">
-                        <EnumInput value={recipeData.dishType} name="dishType" placeholder="Dish type" handleEnumChange={handleEnumChange} options={dishTypes}/>
-                    </div>
-                    <div className="advanced-element--container" id="advanced-5">
-                        <EnumInput value={recipeData.mealType} name="mealType" placeholder="Meal type" handleEnumChange={handleEnumChange} options={mealTypes}/>
-                    </div>
-                    <div className="advanced-element--container" id="advanced-6">
-                        <EnumInput value={recipeData.cuisineType} name="cuisineType" placeholder="Cuisine type" handleEnumChange={handleEnumChange} options={cuisineTypes}/>
-                    </div>
-                    <div className="advanced-element--container" id="advanced-7">
-                        <EnumInput value={recipeData.health} name="health" placeholder="Health label" handleEnumChange={handleEnumChange} options={healths}/>
-                    </div>
                     <div className="advanced-element--container" id="advanced-8">
-                        <button>Basic search</button>
+                        <button>Return to basic search</button>
                     </div>
-                    <div className="advanced-element--container" id="advanced-9">
-                        <p>asdadad</p>
+                    <div className="advanced-element--container" id="advanced-paper">
+                        <div><img src={OldPaper} alt="" /></div>
                     </div>
+                    
 
                 </div>
                 <div className="generate-button">
