@@ -123,22 +123,42 @@ export default function Filter(props) {
                 </div>
 
                 <div className="advanced-filter--container">
-                    <input 
-                        type="text" // string
-                        placeholder="excluded item"
-                        className="form--input"
-                        value={recipeData.excluded}
-                        onChange={handleChange}
-                        name="excluded"
-                        autoComplete="off"
-                    />
-                    
-                    <EnumInput value={recipeData.dishType} name="dishType" placeholder="Dish type" handleEnumChange={handleEnumChange} options={dishTypes}/>
-                    <EnumInput value={recipeData.mealType} name="mealType" placeholder="Meal type" handleEnumChange={handleEnumChange} options={mealTypes}/>
-                    <EnumInput value={recipeData.cuisineType} name="cuisineType" placeholder="Cuisine type" handleEnumChange={handleEnumChange} options={cuisineTypes}/>
-                    <EnumInput value={recipeData.health} name="health" placeholder="Health label" handleEnumChange={handleEnumChange} options={healths}/>
-                    <RangeInput name="calories" handleRange={handleRange} />          
-                    <RangeInput name="time" handleRange={handleRange} />
+                    <div className="advanced-element--container" id="advanced-1">
+                        <RangeInput name="calories" handleRange={handleRange} />   
+                    </div>       
+                    <div className="advanced-element--container" id="advanced-2">
+                        <RangeInput name="time" handleRange={handleRange} />
+                    </div>
+                    <div className="advanced-element--container" id="advanced-3">
+                        <input 
+                            type="text" // string
+                            placeholder="excluded item"
+                            className="form--input"
+                            value={recipeData.excluded}
+                            onChange={handleChange}
+                            name="excluded"
+                            autoComplete="off"
+                        />
+                    </div>
+                    <div className="advanced-element--container" id="advanced-4">
+                        <EnumInput value={recipeData.dishType} name="dishType" placeholder="Dish type" handleEnumChange={handleEnumChange} options={dishTypes}/>
+                    </div>
+                    <div className="advanced-element--container" id="advanced-5">
+                        <EnumInput value={recipeData.mealType} name="mealType" placeholder="Meal type" handleEnumChange={handleEnumChange} options={mealTypes}/>
+                    </div>
+                    <div className="advanced-element--container" id="advanced-6">
+                        <EnumInput value={recipeData.cuisineType} name="cuisineType" placeholder="Cuisine type" handleEnumChange={handleEnumChange} options={cuisineTypes}/>
+                    </div>
+                    <div className="advanced-element--container" id="advanced-7">
+                        <EnumInput value={recipeData.health} name="health" placeholder="Health label" handleEnumChange={handleEnumChange} options={healths}/>
+                    </div>
+                    <div className="advanced-element--container" id="advanced-8">
+                        <button>Basic search</button>
+                    </div>
+                    <div className="advanced-element--container" id="advanced-9">
+                        <p>asdadad</p>
+                    </div>
+
                 </div>
                 <div className="generate-button">
                     <button 

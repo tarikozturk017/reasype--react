@@ -23,7 +23,7 @@ input, select, option{
     font-size: 1rem;
     color: #3e2234;
     letter-spacing: 0.06rem;
-    max-width: 135px;
+    max-width: 120px;
 }
 
 button{
@@ -241,6 +241,20 @@ datalist{
 
 }
 
+.advanced-filter--container{
+    margin-top: 30px;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.advanced-element--container > *{
+    /* grid-template-columns: auto auto auto; */
+    display: flex;
+    flex-direction: row;
+}
+
 .form-element--container{
     display: flex;
     flex-direction: column;
@@ -249,7 +263,7 @@ datalist{
 }
 .form-element--container > p{
     /* margin-left: 15px; */
-    margin: 10px 0 3px 5px;
+    margin: 10px 0 3px 7px;
     font-style: italic;
     color: #3e2234;
     font-weight: 100;
@@ -263,5 +277,5 @@ datalist{
     flex-direction: column;
 }
 .enum--buttons {
-    margin: 2px 25px;
+    margin: 4px 15px;
 }

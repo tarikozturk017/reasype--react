@@ -34,26 +34,29 @@ export default function EnumInput(props) {
             <div className="form--input">
                 <input 
                     type="text" //range
-                    placeholder="Enter start range"
+                    placeholder="Start"
                     value={range.start}
                     onChange={handleChange}
                     name='start'
                     autoComplete="off"
+                    style={{width: '30px'}}
                 />
             </div>
             <div className="form--input">
                 <input 
                     type="text" //range
-                    placeholder="Enter end range"
+                    placeholder="End"
                     value={range.end}
                     onChange={handleChange}
                     name='end'
                     autoComplete="off"
+                    style={{width: '30px'}}
                 />
             </div>
                 <button 
                     className="form--button"
                     onClick={handleRange}
+                    style={{padding: '4px'}}
                 >
                     Set range
                 </button>
