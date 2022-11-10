@@ -21,7 +21,7 @@ export default function EnumInput(props) {
         if(range.start === '' && range.end !== '')  rangeData = `${range.end}`;
         else if(range.start !== '' && range.end === '')  rangeData = `${range.start}%2B`; //encode for +
         else if(range.start !== '' && range.end !== '') rangeData = `${range.start}-${range.end}`;
-        props.handleRange(rangeData, range.name)
+        if(!(range.start === '' && range.end === '')) props.handleRange(rangeData, range.name)
         setRange({
             name: props.name,
             start: '',

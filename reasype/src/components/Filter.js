@@ -62,7 +62,6 @@ export default function Filter(props) {
         if (name === 'ingr') {
             if(value === '10+') value = 100;
         }
-        console.log(value / 2)
         setRecipeData(prevData => ({
             ...prevData,
             // [name]: value
@@ -98,44 +97,57 @@ export default function Filter(props) {
                 <p>Please set any of the filter to generate a recipe based on your wish</p>    
             </div>
             <div className="form"> 
-                <input // no need to change 
-                    type="text" // string
-                    placeholder="Query meal name"
-                    className="form--input"
-                    value={recipeData.q}
-                    onChange={handleChange}
-                    name="q"
-                    autoComplete="off"
-                />
-               
-                <EnumInput value={recipeData.diet} name="diet" placeholder="Diet" handleEnumChange={handleEnumChange} options={diets}/>
-          
-                <select value={recipeData.ingr} onChange={handleChange} name="ingr" className="form--input" >
-                    {nums}
-                </select>
-                <input 
-                    type="text" // string
-                    placeholder="excluded item"
-                    className="form--input"
-                    value={recipeData.excluded}
-                    onChange={handleChange}
-                    name="excluded"
-                    autoComplete="off"
-                />
-                
-                <EnumInput value={recipeData.dishType} name="dishType" placeholder="Dish type" handleEnumChange={handleEnumChange} options={dishTypes}/>
-                <EnumInput value={recipeData.mealType} name="mealType" placeholder="Meal type" handleEnumChange={handleEnumChange} options={mealTypes}/>
-                <EnumInput value={recipeData.cuisineType} name="cuisineType" placeholder="Cuisine type" handleEnumChange={handleEnumChange} options={cuisineTypes}/>
-                <EnumInput value={recipeData.health} name="health" placeholder="Health label" handleEnumChange={handleEnumChange} options={healths}/>
-                <RangeInput name="calories" handleRange={handleRange} />          
-                <RangeInput name="time" handleRange={handleRange} />
-                
-                <button 
-                    className="form--button"
-                    onClick={getRecipe}
-                >
-                    Get a new recipe
-                </button>
+                <div className="primary-filter--container">
+                    <div className="form-element--container">
+                        <p>Enter a query to search</p>
+                        <input // no need to change 
+                            type="text" // string
+                            placeholder="Query meal name"
+                            className="form--input"
+                            value={recipeData.q}
+                            onChange={handleChange}
+                            name="q"
+                            autoComplete="off"
+                        />
+                    </div>
+                    <div className="form-element--container">
+                        <p>Select a diet type</p>
+                        <EnumInput value={recipeData.diet} name="diet" placeholder="Diet" handleEnumChange={handleEnumChange} options={diets}/>
+                    </div>
+                    <div className="form-element--container">
+                        <p>Select a diet type</p>
+                        <select value={recipeData.ingr} onChange={handleChange} name="ingr" className="form--input" >
+                            {nums}
+                        </select>
+                    </div>
+                </div>
+
+                <div className="advanced-filter--container">
+                    <input 
+                        type="text" // string
+                        placeholder="excluded item"
+                        className="form--input"
+                        value={recipeData.excluded}
+                        onChange={handleChange}
+                        name="excluded"
+                        autoComplete="off"
+                    />
+                    
+                    <EnumInput value={recipeData.dishType} name="dishType" placeholder="Dish type" handleEnumChange={handleEnumChange} options={dishTypes}/>
+                    <EnumInput value={recipeData.mealType} name="mealType" placeholder="Meal type" handleEnumChange={handleEnumChange} options={mealTypes}/>
+                    <EnumInput value={recipeData.cuisineType} name="cuisineType" placeholder="Cuisine type" handleEnumChange={handleEnumChange} options={cuisineTypes}/>
+                    <EnumInput value={recipeData.health} name="health" placeholder="Health label" handleEnumChange={handleEnumChange} options={healths}/>
+                    <RangeInput name="calories" handleRange={handleRange} />          
+                    <RangeInput name="time" handleRange={handleRange} />
+                </div>
+                <div className="generate-button">
+                    <button 
+                        // className="generate-button"
+                        onClick={getRecipe}
+                    >
+                        Get a new recipe
+                    </button>
+                </div>
             </div>
             {/* <div className="meme">
             <img src={meme.randomImage} alt="" className="meme--image" />

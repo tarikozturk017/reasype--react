@@ -48,7 +48,7 @@ export default function EnumInput(props) {
     
     return (
         // console.log(props)
-        <div className="form--input">
+        <div className="form-enum--input">
             <input //enum
                 type="text"
                 placeholder={props.placeholder}
@@ -63,24 +63,21 @@ export default function EnumInput(props) {
                     <option key={key} value={item} />
                 )}
             </datalist>
-            <button 
-                className="form--button"
-                onClick={handleEnumChange}
-            >
-                Add
-            </button>
-            {/* <button 
-                className="form--button"
-                onClick={handleEnum}
-            >
-                Set
-            </button> */}
-            <button 
-                className="form--button"
-                onClick={resetEnum}
-            >
-                Reset
-            </button>
+            <div className="enum--buttons">
+                <button 
+                    className="form--button"
+                    onClick={handleEnumChange}
+                >
+                    Add
+                </button>
+                <button 
+                    style={{backgroundColor: '#b89099'}}
+                    className="form--button"
+                    onClick={resetEnum}
+                >
+                    Reset
+                </button>
+            </div>
             {arr[0] && settedItems}
         </div>
     )
