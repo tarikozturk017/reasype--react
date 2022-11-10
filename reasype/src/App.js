@@ -6,16 +6,16 @@ import dataJson from './data.json'
 
 export default function App() {
     const [optionsData, setOptionsData] = React.useState({
-      q: '', 
-      diet: '', 
-      ingr: 5,
-      excluded: '',
-      dishType: '',
-      mealType: '',
-      cuisineType: '',
-      health: '',
-      calories: '',
-      time: ''
+        q: '', 
+        diet: [], //enum
+        ingr: 5,
+        excluded: '',
+        dishType: [], //enum
+        mealType: [], //enum
+        cuisineType: [], //enum
+        health: [], //enum
+        calories: '',
+        time: ''
     });  
     const [resultRecipe, setResultRecipe] = React.useState({});
     const [isRecipeGenerated, setIsRecipeGenerated] = React.useState(false);
@@ -81,13 +81,13 @@ export default function App() {
         console.log("reseting old game")
         setOptionsData({
             q: '', 
-            diet: '', 
+            diet: [], //enum
             ingr: 5,
             excluded: '',
-            dishType: '',
-            mealType: '',
-            cuisineType: '',
-            health: '',
+            dishType: [], //enum
+            mealType: [], //enum
+            cuisineType: [], //enum
+            health: [], //enum
             calories: '',
             time: ''
           });  

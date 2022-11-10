@@ -5,13 +5,13 @@ import RangeInput from "./RangeInput"
 export default function Filter(props) {
     const [recipeData, setRecipeData] = React.useState({
         q: '', 
-        diet: '', 
+        diet: [], //enum
         ingr: 5,
         excluded: '',
-        dishType: '',
-        mealType: '',
-        cuisineType: '',
-        health: '',
+        dishType: [], //enum
+        mealType: [], //enum
+        cuisineType: [], //enum
+        health: [], //enum
         calories: '',
         time: ''
     }) 
@@ -64,6 +64,15 @@ export default function Filter(props) {
         }))
     }
 
+    function handleEnumChange(data, name) {
+        console.log('Filter handleEnumChange' + data + name)
+        setRecipeData(prevData => ({
+            ...prevData,
+            // [name]: value
+            [name]: data
+        }))
+    }
+
 
 
     // TODO
@@ -73,9 +82,12 @@ export default function Filter(props) {
     // https://www.w3schools.com/howto/howto_js_filter_dropdown.asp
     return (
         <div className="filter-page--container">
-            
-            <div className="form">
-                <input 
+            <div className="filter--header">
+                <h3>Reasype</h3>
+                <p>Please set any of the filter to generate a recipe based on your wish</p>    
+            </div>
+            <div className="form"> 
+                <input // no need to change 
                     type="text" // string
                     placeholder="Query meal name"
                     className="form--input"
@@ -100,7 +112,7 @@ export default function Filter(props) {
                     )}
                 </datalist> */}
 
-                <EnumInput value={recipeData.diet} name="diet" placeholder="Diet" handleChange={handleChange} options={diets}/>
+                <EnumInput value={recipeData.diet} name="diet" placeholder="Diet" handleEnumChange={handleEnumChange} options={diets}/>
 
                 <input 
                     type="number" //int
@@ -134,7 +146,7 @@ export default function Filter(props) {
                         <option key={key} value={item} />
                     )}
                 </datalist> */}
-                <EnumInput value={recipeData.dishType} name="dishType" placeholder="Dish type" handleChange={handleChange} options={dishTypes}/>
+                <EnumInput value={recipeData.dishType} name="dishType" placeholder="Dish type" handleEnumChange={handleEnumChange} options={dishTypes}/>
 
                 {/* <input 
                     type="text" //enum
@@ -151,7 +163,7 @@ export default function Filter(props) {
                     )}
                 </datalist> */}
 
-                <EnumInput value={recipeData.mealType} name="mealType" placeholder="Meal type" handleChange={handleChange} options={mealTypes}/>
+                <EnumInput value={recipeData.mealType} name="mealType" placeholder="Meal type" handleEnumChange={handleEnumChange} options={mealTypes}/>
 
                 {/* <input 
                     type="text" //enum
@@ -168,7 +180,7 @@ export default function Filter(props) {
                     )}
                 </datalist> */}
 
-                <EnumInput value={recipeData.cuisineType} name="cuisineType" placeholder="Cuisine type" handleChange={handleChange} options={cuisineTypes}/>
+                <EnumInput value={recipeData.cuisineType} name="cuisineType" placeholder="Cuisine type" handleEnumChange={handleEnumChange} options={cuisineTypes}/>
 
                 {/* <input 
                     type="text" //enum
@@ -185,7 +197,7 @@ export default function Filter(props) {
                     )}
                 </datalist> */}
 
-                <EnumInput value={recipeData.health} name="health" placeholder="Health label" handleChange={handleChange} options={healths}/>
+                <EnumInput value={recipeData.health} name="health" placeholder="Health label" handleEnumChange={handleEnumChange} options={healths}/>
 {/* 
 
                 <input 

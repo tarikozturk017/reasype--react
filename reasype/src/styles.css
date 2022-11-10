@@ -30,6 +30,23 @@ body{
     box-shadow: 5px 5px 5px 0px #FCF8E8, inset 4px 4px 15px 0px #FCF8E8, 2px 5px 7px 5px rgba(252,248,232,0);
 }
 
+.filter--header{
+    display: flex;
+    flex-direction: column;
+}
+
+.filter--header > h3{
+    margin: 10px auto;
+    font-size: 30px;
+}
+
+.filter--header > p{
+    margin: 5px auto;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-size: 15px;
+}
+
 .recipe--header {
     display: flex;
     font-style: italic;
@@ -66,12 +83,19 @@ body{
     font-size: 1.1rem;
 }
 
-.recipe--ingredients > h3{
-    margin-left: 20px;
+h3{
     font-size: larger;
     text-decoration: underline;     
     text-decoration-color: #3e2234;  
     text-decoration-style:solid;  
+}
+
+.recipe--ingredients > h3{
+    margin-left: 20px;
+    /* font-size: larger;
+    text-decoration: underline;     
+    text-decoration-color: #3e2234;  
+    text-decoration-style:solid;   */
 }
 
 .recipe--source {
@@ -112,12 +136,12 @@ body{
     margin-bottom: 30px;
     /* letter-spacing: 0.06rem; */
 }
-.recipe--information > h3{
+/* .recipe--information > h3{
     font-size: larger;
     text-decoration: underline;     
     text-decoration-color: #3e2234;  
     text-decoration-style:solid;  
-}
+} */
 
 .recipe--information > div{
     margin-left: 10px;
