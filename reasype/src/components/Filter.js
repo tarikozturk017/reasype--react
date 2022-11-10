@@ -29,7 +29,9 @@ export default function Filter(props) {
         'kidney-friendly', 'kosher', 'low-potassium', 'lupine-free', 'mustard-free', 'low-fat-abs', 
         'No-oil-added', 'low-sugar', 'paleo', 'peanut-free', 'pecatarian', 'pork-free', 'red-meat-free', 
         'sesame-free', 'shellfish-free', 'soy-free', 'sugar-conscious', 'tree-nut-free', 'vegan', 'vegetarian', 'wheat-free']
-    
+    const numbers = ['3', '4', '5', '6', '7', '8', '9', '10+']
+
+
     // React.useEffect(() => {
 
     // })
@@ -56,7 +58,11 @@ export default function Filter(props) {
     }
 
     function handleChange(event) {
-        const {name, value} = event.target
+        let {name, value} = event.target
+        if (name === 'ingr') {
+            if(value === '10+') value = 100;
+        }
+        console.log(value / 2)
         setRecipeData(prevData => ({
             ...prevData,
             // [name]: value
@@ -73,6 +79,11 @@ export default function Filter(props) {
         }))
     }
 
+    const nums = numbers.map((num) => {
+        return (
+            <option value={num}>{num}</option>
+        )
+    })
 
 
     // TODO
@@ -96,33 +107,12 @@ export default function Filter(props) {
                     name="q"
                     autoComplete="off"
                 />
-                
-                {/* <input //enum
-                    type="text"
-                    placeholder="Diet"
-                    className="form--input"
-                    value={recipeData.diet}
-                    onChange={handleChange}
-                    name="diet"
-                    list="diet"
-                />
-                <datalist id="diet">
-                    {diets.map((item, key) => 
-                        <option key={key} value={item} />
-                    )}
-                </datalist> */}
-
+               
                 <EnumInput value={recipeData.diet} name="diet" placeholder="Diet" handleEnumChange={handleEnumChange} options={diets}/>
-
-                <input 
-                    type="number" //int
-                    placeholder="Max number of ingredients"
-                    min="1"
-                    className="form--input"
-                    value={recipeData.ingr}
-                    onChange={handleChange}
-                    name="ingr"
-                />
+          
+                <select value={recipeData.ingr} onChange={handleChange} name="ingr" className="form--input" >
+                    {nums}
+                </select>
                 <input 
                     type="text" // string
                     placeholder="excluded item"
@@ -132,92 +122,14 @@ export default function Filter(props) {
                     name="excluded"
                     autoComplete="off"
                 />
-                {/* <input 
-                    type="text" //enum
-                    placeholder="Dish type"
-                    className="form--input"
-                    value={recipeData.dishType}
-                    onChange={handleChange}
-                    name="dishType"
-                    list="dishType"
-                />
-                <datalist id="dishType">
-                    {dishTypes.map((item, key) => 
-                        <option key={key} value={item} />
-                    )}
-                </datalist> */}
+                
                 <EnumInput value={recipeData.dishType} name="dishType" placeholder="Dish type" handleEnumChange={handleEnumChange} options={dishTypes}/>
-
-                {/* <input 
-                    type="text" //enum
-                    placeholder="Meal type"
-                    className="form--input"
-                    value={recipeData.mealType}
-                    onChange={handleChange}
-                    name="mealType"
-                    list="mealType"
-                />
-                <datalist id="mealType">
-                    {mealTypes.map((item, key) => 
-                        <option key={key} value={item} />
-                    )}
-                </datalist> */}
-
                 <EnumInput value={recipeData.mealType} name="mealType" placeholder="Meal type" handleEnumChange={handleEnumChange} options={mealTypes}/>
-
-                {/* <input 
-                    type="text" //enum
-                    placeholder="Cuisine type"
-                    className="form--input"
-                    value={recipeData.cuisineType}
-                    onChange={handleChange}
-                    name="cuisineType"
-                    list="cuisineType"
-                />
-                <datalist id="cuisineType">
-                    {cuisineTypes.map((item, key) => 
-                        <option key={key} value={item} />
-                    )}
-                </datalist> */}
-
                 <EnumInput value={recipeData.cuisineType} name="cuisineType" placeholder="Cuisine type" handleEnumChange={handleEnumChange} options={cuisineTypes}/>
-
-                {/* <input 
-                    type="text" //enum
-                    placeholder="Health label"
-                    className="form--input"
-                    value={recipeData.health}
-                    onChange={handleChange}
-                    name="health"
-                    list="health"
-                />
-                <datalist id="health">
-                    {healths.map((item, key) => 
-                        <option key={key} value={item} />
-                    )}
-                </datalist> */}
-
                 <EnumInput value={recipeData.health} name="health" placeholder="Health label" handleEnumChange={handleEnumChange} options={healths}/>
-{/* 
-
-                <input 
-                    type="text" //range
-                    placeholder="Calories"
-                    className="form--input"
-                    value={recipeData.calories}
-                    onChange={handleChange}
-                    name="calories"
-                /> */}
-                <RangeInput name="calories" handleRange={handleRange} />
-                {/* <input 
-                    type="text" //range
-                    placeholder="Time"
-                    className="form--input"
-                    value={recipeData.time}
-                    onChange={handleChange}
-                    name="time"
-                /> */}
+                <RangeInput name="calories" handleRange={handleRange} />          
                 <RangeInput name="time" handleRange={handleRange} />
+                
                 <button 
                     className="form--button"
                     onClick={getRecipe}

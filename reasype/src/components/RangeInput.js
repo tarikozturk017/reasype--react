@@ -38,6 +38,7 @@ export default function EnumInput(props) {
                     value={range.start}
                     onChange={handleChange}
                     name='start'
+                    autoComplete="off"
                 />
             </div>
             <div className="form--input">
@@ -47,6 +48,7 @@ export default function EnumInput(props) {
                     value={range.end}
                     onChange={handleChange}
                     name='end'
+                    autoComplete="off"
                 />
             </div>
                 <button 

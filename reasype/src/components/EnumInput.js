@@ -16,23 +16,28 @@ export default function EnumInput(props) {
     }
 
     function handleEnumChange() {
-        console.log('setting handle range data: ' + elem.filterElem)
+        // console.log('setting handle range data: ' + elem.filterElem)
         setArr(prevData => ([
             ...prevData,
             elem.filterElem
         ]))
-
-        console.log('before element is being set ')
+        // console.log('before array is being set the elem is: ' + elem.filterElem)
         setElem({
             filterElem: ''
         })
     }
 
-    function handleEnum() {
-        console.log('handling enum: ' + arr + props.name)
+    React.useEffect(() => {
+        // console.log('handling enum: ' + arr + props.name)
         props.handleEnumChange(arr, props.name)
-        setArr([])
-    }
+    //     setArr([])
+    }, [arr])
+
+    // function handleEnum() {
+    //     console.log('handling enum: ' + arr + props.name)
+    //     props.handleEnumChange(arr, props.name)
+    //     setArr([])
+    // }
     
     function resetEnum() {
         setArr([]);
@@ -64,12 +69,12 @@ export default function EnumInput(props) {
             >
                 Add
             </button>
-            <button 
+            {/* <button 
                 className="form--button"
                 onClick={handleEnum}
             >
                 Set
-            </button>
+            </button> */}
             <button 
                 className="form--button"
                 onClick={resetEnum}
