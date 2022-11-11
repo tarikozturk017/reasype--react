@@ -415,3 +415,21 @@ datalist{
     flex-direction: row;
     width: 150px;
 }
+
+.advanced--outer{
+    display: block;
+}
+
+.advanced-search--button{
+    display: flex;
+}
+
+.advanced-search--button > button{
+    margin: 40px auto 20px auto;
+    
+    background-image: linear-gradient(#d0cdfdab, #b58ebc);
+    width: 120px;
+    padding: 15px 15px;
+    border-radius: 55px;
+    font-size: 1rem;
+}
