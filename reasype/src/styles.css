@@ -266,6 +266,7 @@ datalist{
 
 .primary-filter--container{
     display: flex;
+    margin-left: 30px;
     /* flex-direction: row; */
 
 }
@@ -433,3 +434,20 @@ datalist{
     border-radius: 55px;
     font-size: 1rem;
 }
+
+
+.diet-value--filter{
+    display: block;
+    margin: 15px;
+}
+
+/* 
+.advanced-search--button{
+    overflow: hidden;
+    transition-duration: 0.8s;
+    transition-property: transform;
+}
+.advanced-search--button:hover {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+} */

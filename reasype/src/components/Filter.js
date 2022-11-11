@@ -178,9 +178,12 @@ export default function Filter(props) {
                     <div className="form-element--container">
                         <p className="input--description">Select diet type</p>
                         <EnumInput value={recipeData.diet} name="diet" placeholder="Diet" handleEnumChange={handleEnumChange} options={diets}/>
+                        <p className="diet-value--filter">{recipeData.diet.map((item) => {
+                            return <li>{item}</li>
+                        })}</p>
                     </div>
                     <div className="form-element--container">
-                        <p>Select a diet type</p>
+                        <p>Max ingredients #{recipeData.ingr}</p>
                         <select value={recipeData.ingr} onChange={handleChange} name="ingr" className="form--input" >
                             {nums}
                         </select>
