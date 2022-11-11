@@ -65,20 +65,23 @@ export default function EnumInput(props) {
             </datalist>
             <div className="enum--buttons">
                 <button 
+                    // style={{marginLeft: "-50px"}}
                     className="form--button"
                     onClick={handleEnumChange}
                 >
                     Add
                 </button>
                 <button 
-                    style={{backgroundColor: '#b89099'}}
+                    // style={{backgroundColor: '#b89099', boxShadow: '2px 2px 5px 0px #b878ce' }}
+
+                    id="reset--button"
                     className="form--button"
                     onClick={resetEnum}
                 >
                     Reset
                 </button>
             </div>
-            {arr[0] && settedItems}
+            {/* {arr[0] && settedItems} */}
         </div>
     )
 }

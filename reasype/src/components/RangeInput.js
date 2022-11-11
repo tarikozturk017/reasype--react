@@ -35,7 +35,7 @@ export default function EnumInput(props) {
             <div className="form--input">
                 <input 
                     type="text" //range
-                    placeholder="Start"
+                    placeholder="Min"
                     value={range.start}
                     onChange={handleChange}
                     name='start'
@@ -46,7 +46,7 @@ export default function EnumInput(props) {
             <div className="form--input" style={{marginLeft: '10px'}}>
                 <input 
                     type="text" //range
-                    placeholder="End"
+                    placeholder="Max"
                     value={range.end}
                     onChange={handleChange}
                     name='end'
@@ -58,7 +58,7 @@ export default function EnumInput(props) {
                 <button 
                     className="range--button"
                     onClick={handleRange}
-                    style={{borderRadius: '5px', marginLeft: '15px'}}
+                    style={{borderRadius: '50px', marginLeft: '20px'}}
                     
                 >
                     Set range

@@ -100,7 +100,7 @@ export default function Filter(props) {
             <div className="form"> 
                 <div className="primary-filter--container">
                     <div className="form-element--container">
-                        <p>Enter a query to search</p>
+                        <p className="input--description">Enter a query to search</p>
                         <input // no need to change 
                             type="text" // string
                             placeholder="Query name"
@@ -112,7 +112,7 @@ export default function Filter(props) {
                         />
                     </div>
                     <div className="form-element--container">
-                        <p>Select a diet type</p>
+                        <p className="input--description">Select diet type</p>
                         <EnumInput value={recipeData.diet} name="diet" placeholder="Diet" handleEnumChange={handleEnumChange} options={diets}/>
                     </div>
                     <div className="form-element--container">
@@ -125,28 +125,35 @@ export default function Filter(props) {
 
                 <div className="advanced-filter--container">
                     <div className="advanced-element--container" id="advanced-1">
+                        <p className="input--description">Enter calorie range</p>
                         <RangeInput name="calories" handleRange={handleRange} />   
                     </div>       
                     <div className="advanced-element--container" id="advanced-2">
+                        <p className="input--description">Enter preparation time</p>
                         <RangeInput name="time" handleRange={handleRange} />
                     </div>
                     
                     <div className="advanced-element--container" id="advanced-3">
+                        <p className="input--description">Select dish type</p>
                         <EnumInput value={recipeData.dishType} name="dishType" placeholder="Dish type" handleEnumChange={handleEnumChange} options={dishTypes}/>
                     </div>
                     <div className="advanced-element--container" id="advanced-4">
+                        <p className="input--description">Select meal type</p>
                         <EnumInput value={recipeData.mealType} name="mealType" placeholder="Meal type" handleEnumChange={handleEnumChange} options={mealTypes}/>
                     </div>
                     <div className="advanced-element--container" id="advanced-5">
+                        <p className="input--description">Select cuisine type</p>
                         <EnumInput value={recipeData.cuisineType} name="cuisineType" placeholder="Cuisine type" handleEnumChange={handleEnumChange} options={cuisineTypes}/>
                     </div>
                     <div className="advanced-element--container" id="advanced-6">
+                        <p className="input--description">Select health label</p>
                         <EnumInput value={recipeData.health} name="health" placeholder="Health label" handleEnumChange={handleEnumChange} options={healths}/>
                     </div>
                     <div className="advanced-element--container" id="advanced-7">
+                        <p className="input-exclude--description">Enter an ingredient to exclude</p>
                         <input 
                             type="text" // string
-                            placeholder="excluded item"
+                            placeholder="Exclude ingredient"
                             className="form--input"
                             value={recipeData.excluded}
                             onChange={handleChange}
@@ -154,14 +161,15 @@ export default function Filter(props) {
                             autoComplete="off"
                         />
                     </div>
-                    <div className="advanced-element--container" id="advanced-8">
-                        <button>Return to basic search</button>
-                    </div>
+                    <div></div>
                     <div className="advanced-element--container" id="advanced-paper">
                         <div><img src={OldPaper} alt="" /></div>
                     </div>
-                    
+                
 
+                </div>
+                <div  className="advanced-element--container" id="advanced-8">
+                    <button >Return to basic search</button>
                 </div>
                 <div className="generate-button">
                     <button 
