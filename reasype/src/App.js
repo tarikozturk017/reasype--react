@@ -1,6 +1,8 @@
 import React from 'react';
 import Filter from './components/Filter';
 import Recipe from './components/Recipe';
+import Fork from "./fork.png"
+import Knife from "./knife.png"
 import './styles.css'
 import dataJson from './data.json'
 
@@ -100,6 +102,10 @@ export default function App() {
     return (
         <div>
             <div className='outer--container'>
+            {/* <div className='sides--container'> */}
+                <img src={Fork} alt="" className="fork"/>
+                
+            {/* </div> */}
             {/* <Leftbar /> */}
                 <div className='container'>
                     {!isRecipeGenerated ? 
@@ -109,6 +115,7 @@ export default function App() {
                     {/* <Filter handleFilter={handleFilter}/> */}
                     {/* <Recipe  resultRecipe={resultRecipe} /> */}
                 </div>
+                <img src={Knife} alt="" className="knife"/>
             </div>
         </div>
     );

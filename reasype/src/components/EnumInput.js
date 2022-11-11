@@ -60,7 +60,7 @@ export default function EnumInput(props) {
             />
             <datalist id={props.name}>
                 {props.options.map((item, key) => 
-                    <option key={key} value={item} />
+                     <option key={key} value={item} />
                 )}
             </datalist>
             <div className="enum--buttons">

@@ -77,14 +77,24 @@ button:active{
 .outer--container{
     display: flex;
     justify-content: center;
+    /* bottom: 0; */
 }
+
+
+.knife, .fork{
+    margin-top: 100px;
+    width: auto;
+    height: 400px;
+    opacity: 0.8;
+}
+
 .container {
     margin: 35px 0;
     background-color:  #94B49F;
     justify-content: center;
     /* border: 1px solid #FCF8E8; */
     min-height: 80vh;
-    width: 600px;
+    min-width: 600px;
     padding: 25px;
     border-radius: 15px;
     -webkit-box-shadow: 5px 5px 5px 0px #FCF8E8, inset 4px 4px 15px 0px #FCF8E8, 2px 5px 7px 5px rgba(252,248,232,0); 
@@ -436,10 +446,33 @@ datalist{
 }
 
 
+
 .diet-value--filter{
     display: block;
     margin: 15px;
 }
+
+
+.paper-p--container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* background-color: red; */
+    width: 220px;
+    height: 285px;
+    top: -340px;
+    right: -54px;
+    /* top: 320px;
+    right: 215px; */
+    line-height: 3px;
+}
+
+.paper-p--container{
+    align-items: flex-start;
+    margin: 0;
+    font-size: 13px;
+}
+
 
 /* 
 .advanced-search--button{

@@ -2,6 +2,7 @@ import React from "react";
 import EnumInput from "./EnumInput";
 import RangeInput from "./RangeInput"
 import OldPaper from "../old.webp"
+import PaperContent from "./PaperContent";
 
 export default function Filter(props) {
     const [recipeData, setRecipeData] = React.useState({
@@ -90,6 +91,7 @@ export default function Filter(props) {
     function toggleAdvancedSearch() {
         console.log('setting adv/reg')
         setIsAdvanced((oldAdvanced) => !oldAdvanced)
+        
     }
 
     const regularSearch = <div className="advanced-search--button">
@@ -139,6 +141,7 @@ export default function Filter(props) {
         <div></div>
         <div className="advanced-element--container" id="advanced-paper">
             <div><img src={OldPaper} alt="" /></div>
+            <PaperContent data={recipeData}/>
         </div>
     
 
@@ -149,9 +152,10 @@ export default function Filter(props) {
     </div>
 
     const updatedPage = isAdvanced ? advancedSearch : regularSearch;
+    const OptionVal = recipeData.ingr=== 100 ? '10+' : recipeData.ingr;
 
     // TODO
-    //handle data options with arr for enums -> [] when setting. push etc.. to manipulate  
+    
 
     // apply the concept below to the enum types
     // https://www.w3schools.com/howto/howto_js_filter_dropdown.asp
@@ -178,13 +182,13 @@ export default function Filter(props) {
                     <div className="form-element--container">
                         <p className="input--description">Select diet type</p>
                         <EnumInput value={recipeData.diet} name="diet" placeholder="Diet" handleEnumChange={handleEnumChange} options={diets}/>
-                        <p className="diet-value--filter">{recipeData.diet.map((item) => {
+                        {/* <p className="diet-value--filter">{recipeData.diet.map((item) => {
                             return <li>{item}</li>
-                        })}</p>
+                        })}</p> */}
                     </div>
                     <div className="form-element--container">
-                        <p>Max ingredients #{recipeData.ingr}</p>
-                        <select value={recipeData.ingr} onChange={handleChange} name="ingr" className="form--input" >
+                        <p>Max ingredients #{recipeData.ingr === 100 ? '10+' : parseInt(recipeData.ingr) }</p>
+                        <select value={OptionVal} onChange={handleChange} name="ingr" className="form--input" >
                             {nums}
                         </select>
                     </div>
