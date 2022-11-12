@@ -2,7 +2,9 @@ import React from "react";
 import EnumInput from "./EnumInput";
 import RangeInput from "./RangeInput"
 import OldPaper from "../old.webp"
+import Post from "../post.png"
 import PaperContent from "./PaperContent";
+import BasicPaper from "./BasicPaper";
 
 export default function Filter(props) {
     const [recipeData, setRecipeData] = React.useState({
@@ -138,7 +140,7 @@ export default function Filter(props) {
                 autoComplete="off"
             />
         </div>
-        <div></div>
+        {/* <div></div> */}
         <div className="advanced-element--container" id="advanced-paper">
             <div><img src={OldPaper} alt="" /></div>
             <PaperContent data={recipeData}/>
@@ -155,7 +157,10 @@ export default function Filter(props) {
     const OptionVal = recipeData.ingr=== 100 ? '10+' : recipeData.ingr;
 
     // TODO
-    
+    // add reset to range or make it toggle
+    // if no input press add, make no change
+    // sticker for basic search
+    // test project 
 
     // apply the concept below to the enum types
     // https://www.w3schools.com/howto/howto_js_filter_dropdown.asp
@@ -252,14 +257,29 @@ export default function Filter(props) {
                 {regularSearch} */}
 
                 {updatedPage}
+                <BasicPaper isAdvanced={isAdvanced}/> 
                 <div className="generate-button">
                     <button 
                         // className="generate-button"
                         onClick={getRecipe}
                     >
-                        Get a new recipe
+                        Generate Recipe
                     </button>
                 </div>
+                {/* {!isAdvanced && {Post}} */}
+                {/* <div className="basic-paper--container" >
+                    {!isAdvanced && <div className="basic--paper">
+                        <img src={Post} alt="" />
+                    </div>}
+                    <div className="basic-p--paper">
+                        <li>Querying for Chicken</li>
+                        <li>Max 5 ingredients</li>
+                        <li>Diet types: </li>
+                        </div>
+                </div> */}
+                
+                
+                
             </div>
             {/* <div className="meme">
             <img src={meme.randomImage} alt="" className="meme--image" />

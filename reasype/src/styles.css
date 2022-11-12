@@ -4,7 +4,10 @@
 *{
     /* background-image: url("./background.jpg"); */
 }
-
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 body{
     margin: 0;
     background-image: url("./background.jpg");
@@ -68,7 +71,8 @@ button:active{
 }
 
 #reset--button{
-    background-color: #b89099;
+    background-color: #8CA6DB;
+    color:#dcdad7;
     /* box-shadow: 2px 2px 5px 0px #b878ce; */
 }
 #reset--button:focus{
@@ -95,7 +99,7 @@ button:active{
 }
 
 .container {
-    margin: 35px 0;
+    margin: 20px 0;
     /* background-color:  #94B49F; */
     background: rgb(250,243,224);
 background: linear-gradient(0deg, rgba(250,243,224,0.927608543417367) 15%, rgba(226,190,164,0.9248074229691877) 50%, rgba(250,243,224,0.9640231092436975) 85%);
@@ -236,7 +240,7 @@ h3{
 }
 
 .generate-button{
-    margin-top: 30px;
+    margin-top: 0px;
     margin-bottom: 50px;
     position: relative;
     
@@ -268,6 +272,7 @@ h3{
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
 
+
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button { 
       -webkit-appearance: none; 
@@ -282,6 +287,40 @@ datalist{
     display: flex;
     margin-left: 30px;
     /* flex-direction: row; */
+
+}
+
+.basic-paper--container{
+    position: relative;
+    opacity: 0.85;
+    display: flex;
+    /* left: 20px; */
+    font-size: 13px;
+    color: #f3dbcb;
+    font-family: "Lucida Handwriting", "Courier New", monospace;
+    left: 10px;
+    bottom: 10px;
+}
+
+.basic--paper{
+    margin: 0 auto;
+}
+.basic--paper > img{
+
+    width: 250px;
+    height: auto;
+}
+
+.basic-p--paper{
+    max-width: 170px;
+    position: absolute;
+    transform: rotate(-10deg);
+    left: 210px;
+    top: 80px;
+    line-height: 20px;
+}
+
+.basic-p--paper > li {
 
 }
 
@@ -460,7 +499,7 @@ datalist{
          
         
 .advanced-search--button > button{
-    margin: 40px auto 20px auto;
+    margin: 30px auto 20px auto;
     color: #FCF8E8;
     transition: 0.5s;
     background-image: linear-gradient(to right, #B993D6 0%, #8CA6DB  51%, #B993D6  100%);
@@ -522,9 +561,13 @@ datalist{
     margin-bottom: 8px;
 }
 
+
+
 .excluded{
     text-decoration: line-through;
 }
+
+
 /* 
 .advanced-search--button{
     overflow: hidden;
