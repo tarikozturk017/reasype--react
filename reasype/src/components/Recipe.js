@@ -31,7 +31,7 @@ export default function Recipe(props) {
         <div className="recipe--container">
             <div className="recipe--header"><h1>{props.resultRecipe.label}</h1></div>
             <div className="image-container">
-                <img src="https://img.freepik.com/free-photo/chicken-wings-barbecue-sweetly-sour-sauce-picnic-summer-menu-tasty-food-top-view-flat-lay_2829-6471.jpg?w=2000" 
+                <img src={props.resultRecipe.image} 
                 alt=""
                 >
                 </img>

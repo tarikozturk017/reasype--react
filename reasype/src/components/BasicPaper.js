@@ -22,11 +22,11 @@ export default function BasicPaper(props) {
             {!props.isAdvanced && <div className="basic--paper">
                 <img src={Post} alt="" />
             </div>}
-            <div className="basic-p--paper">
+            {!props.isAdvanced && <div className="basic-p--paper">
                 {data.q && <li><span> Querying for: {data.q}</span></li>}
                 {OptionVal && <li><span>Ingredients: <strong>{OptionVal}</strong></span></li>}
                 {data.diet.length!==0 && <li><span> Diet type(s): {enumElements(data.diet)}</span></li>}
-            </div>
+            </div>}
         </div>
     )
 }
