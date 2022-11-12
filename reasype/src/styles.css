@@ -4,6 +4,31 @@
 *{
     /* background-image: url("./background.jpg"); */
 }
+
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: inherit; 
+
+    opacity: 0.1;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    /* background: blue;  */
+    background-image: linear-gradient(to bottom, #7145f8 0%, #986dae 51%, #7145f8 100%);
+    opacity: 0.5;
+    border-radius: 150px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient(to bottom, #986dae 0%, #7145f8 51%, #986dae 100%);
+  }
+
 html, body {
     max-width: 100%;
     overflow-x: hidden;
@@ -243,7 +268,6 @@ h3{
     margin-top: 0px;
     margin-bottom: 50px;
     position: relative;
-    
     justify-content: end;
     display: flex;
 }
@@ -253,15 +277,21 @@ h3{
     border-radius: 25px;
     border: 0;
     padding: 12px 25px;
-    background-color:#f3dbcb;
+    color: #FCF8E8;
+    /* background-color:#f3dbcb; */
+    transition: 3.5s;
+    background-image: linear-gradient(to right, #8D72E1  0%, #80489C  51%, #8D72E1  100%);
     box-shadow: 2px 2px 5px 0px #5C3D2E;
     font-family: "Times New Roman",serif;
     font-size: 1.1rem;
-    color: #3e2234;
     letter-spacing: 0.06rem;
+    /* -webkit-transition: 0.4s; */
+    
 }
 
 .generate-button > button:hover{
+    background-image: linear-gradient(to right, #80489C 0%, #8D72E1   51%, #80489C   100%);
+    /* -webkit-transition: 0.4s; */
     cursor: pointer;
 }
 
