@@ -29,6 +29,16 @@ export default function EnumInput(props) {
         })
     }
 
+    function resetRange() {
+        console.log(props.name)
+        props.resetRange(props.name)
+        // setRange({
+        //     name: props.name,
+        //     start: '',
+        //     end: ''
+        // });
+    }
+
     return (
         <div className="form">
             <div className="range-button-container">
@@ -55,14 +65,41 @@ export default function EnumInput(props) {
                 />
             </div>
             </div>
-                <button 
+                {/* <button 
                     className="range--button"
                     onClick={handleRange}
-                    style={{borderRadius: '50px', marginLeft: '20px'}}
+                    // style={{borderRadius: '50px', marginLeft: '20px'}}
                     
                 >
                     Set range
                 </button>
+                <button 
+                    // style={{backgroundColor: '#b89099', boxShadow: '2px 2px 5px 0px #b878ce' }}
+
+                    id="reset--button"
+                    className="form--button"
+                    onClick={reset}
+                >
+                    Reset
+                </button> */}
+                <div className="enum--buttons" id="range-btn--container">
+                <button 
+                    // style={{marginLeft: "-50px"}}
+                    className="form--button"
+                    onClick={handleRange}
+                >
+                    Add
+                </button>
+                <button 
+                    // style={{backgroundColor: '#b89099', boxShadow: '2px 2px 5px 0px #b878ce' }}
+
+                    id="reset--button"
+                    className="form--button"
+                    onClick={resetRange}
+                >
+                    Reset
+                </button>
+            </div>
             </div>
             
 

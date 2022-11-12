@@ -2,7 +2,7 @@ import React from "react";
 import EnumInput from "./EnumInput";
 import RangeInput from "./RangeInput"
 import OldPaper from "../old.webp"
-import Post from "../post.png"
+// import Post from "../post.png"
 import PaperContent from "./PaperContent";
 import BasicPaper from "./BasicPaper";
 
@@ -63,6 +63,14 @@ export default function Filter(props) {
         }))
     }
 
+    function resetRange(name){
+        setRecipeData(prevData => ({
+            ...prevData,
+            // [name]: value
+            [name]: ''
+        }))
+    }
+
     function handleChange(event) {
         let {name, value} = event.target
         if (name === 'ingr') {
@@ -95,6 +103,8 @@ export default function Filter(props) {
         setIsAdvanced((oldAdvanced) => !oldAdvanced)
         
     }
+    
+    
 
     const regularSearch = <div className="advanced-search--button">
                                 <button onClick={toggleAdvancedSearch}>Advanced search</button>
@@ -104,12 +114,12 @@ export default function Filter(props) {
     <div className="advanced--outer">
     <div className="advanced-filter--container">
         <div className="advanced-element--container" id="advanced-1">
-            <p className="input--description">Enter calorie range</p>
-            <RangeInput name="calories" handleRange={handleRange} />   
+            <p className="input--description">Calorie range (kcal)</p>
+            <RangeInput name="calories" resetRange={resetRange} handleRange={handleRange} />   
         </div>       
         <div className="advanced-element--container" id="advanced-2">
-            <p className="input--description">Enter preparation time</p>
-            <RangeInput name="time" handleRange={handleRange} />
+            <p className="input--description">Preparation time (min)s</p>
+            <RangeInput name="time" resetRange={resetRange} handleRange={handleRange} />
         </div>
         
         <div className="advanced-element--container" id="advanced-3">

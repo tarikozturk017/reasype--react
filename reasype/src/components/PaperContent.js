@@ -16,6 +16,11 @@ export default function PaperContent(props) {
         // console.log("data: " + enumData)
     }   
 
+    
+
+    // const calories = data.calories.replace(/%2B/g, "+");
+    // const time = data.time.replace(/%2B/g, "+");
+
     return (
         <div className="paper-p--container">
             {/* {data.q && <p>Querying for: {data.q}</p>}
@@ -23,8 +28,8 @@ export default function PaperContent(props) {
             {data.q && <li>Querying for: {data.q}</li>}
             {OptionVal && <li>Max <strong>{OptionVal}</strong> ingredients</li>}
             {data.diet.length!==0 && <li>Diet type(s): {enumElements(data.diet)}</li>}
-            {data.calories && <li>Calories: {data.calories} kcal <i>(whole meal)</i></li>}
-            {data.time && <li>Preparation time: {data.time} mins</li>}
+            {data.calories.length !==0 && <li>Calories: {data.calories.replace(/%2B/g, "+")} kcal <i>(whole meal) {data.calories}</i></li>}
+            {data.time.length !==0 && <li>Preparation time: {data.time.replace(/%2B/g, "+")} mins</li>}
             {data.dishType.length!==0 && <li>Dish type(s): {enumElements(data.dishType)}</li>}
             {data.mealType.length!==0 && <li>Meal type(s): {enumElements(data.mealType)}</li>}
             {data.cuisineType.length!==0 && <li>Cuisine type(s): {enumElements(data.cuisineType)}</li>}

@@ -69,10 +69,12 @@ button{
     border-radius: 25px;
     border: 0;
     padding: 0 12px;
-    /* background-color:#90b2d4; */
+    background-color: #8CA6DB; 
+    /* #8CA6DB #8D72E*/
+    color: #dcdad7;
     /* box-shadow: 2px 2px 5px 0px #7c9adc; */
     font-family: "Times New Roman",serif;
-    color: #3e2228;
+    /* color: #3e2228; */
     letter-spacing: 0.06rem;
 }
 
@@ -96,7 +98,7 @@ button:active{
 }
 
 #reset--button{
-    background-color: #8CA6DB;
+    background-color: #8D72E1;
     color:#dcdad7;
     /* box-shadow: 2px 2px 5px 0px #b878ce; */
 }
@@ -105,6 +107,11 @@ button:active{
 }
 #reset--button:active{
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+#range-btn--container{
+    left: 50px;
+    text-align: left;
 }
 
 
