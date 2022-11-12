@@ -95,6 +95,7 @@ button:active{
     /* border: 1px solid #FCF8E8; */
     min-height: 80vh;
     min-width: 600px;
+    max-width: 600px;
     padding: 25px;
     border-radius: 15px;
     -webkit-box-shadow: 5px 5px 5px 0px #FCF8E8, inset 4px 4px 15px 0px #FCF8E8, 2px 5px 7px 5px rgba(252,248,232,0); 
@@ -139,13 +140,9 @@ button:active{
     margin: 0 auto;
     border-radius: 25px;
     box-shadow: 2px 2px 5px 0px #ECB390;
-    -webkit-transition: 0.3s;
+    /* -webkit-transition: 0.3s; */
 }
-.image-container > img:hover {
-    height: 300px;
-    width: auto;
-    -webkit-transition: 0.3s;
-}
+
 
 .recipe--ingredients{
     margin-top: 40px;
@@ -455,6 +452,7 @@ datalist{
 
 .paper-p--container{
     display: flex;
+    text-align: left;
     flex-direction: column;
     position: relative;
     /* background-color: red; */
@@ -462,18 +460,30 @@ datalist{
     height: 285px;
     top: -340px;
     right: -54px;
-    /* top: 320px;
-    right: 215px; */
-    line-height: 3px;
-}
-
-.paper-p--container{
-    align-items: flex-start;
+    line-height: 12px;
     margin: 0;
-    font-size: 13px;
+    /* top: 320px;
+    
+    right: 215px; */
+    /* line-height: 3px; */
+    font-size: 10.5px;
+    font-family: "Lucida Handwriting", "Courier New", monospace;
 }
 
+.paper-p--container > li{
+    /* justify-content: left;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    line-height: 15px;
+    width: 220px;
+    margin: 5px */
+    margin-bottom: 8px;
+}
 
+.excluded{
+    text-decoration: line-through;
+}
 /* 
 .advanced-search--button{
     overflow: hidden;
