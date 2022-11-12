@@ -74,7 +74,7 @@ export default function Filter(props) {
     }
 
     function handleEnumChange(data, name) {
-        console.log('Filter handleEnumChange' + data + name)
+        // console.log('Filter handleEnumChange' + data + name)
         setRecipeData(prevData => ({
             ...prevData,
             // [name]: value
@@ -89,7 +89,7 @@ export default function Filter(props) {
     })
 
     function toggleAdvancedSearch() {
-        console.log('setting adv/reg')
+        // console.log('setting adv/reg')
         setIsAdvanced((oldAdvanced) => !oldAdvanced)
         
     }

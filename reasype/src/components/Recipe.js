@@ -26,7 +26,7 @@ export default function Recipe(props) {
         return obj;
     }
 
-    console.log(props.resultRecipe)
+    // console.log(props.resultRecipe)
     return (
         <div className="recipe--container">
             <div className="recipe--header"><h1>{props.resultRecipe.label}</h1></div>
