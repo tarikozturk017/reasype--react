@@ -257,7 +257,7 @@ export default function Filter(props) {
                 {regularSearch} */}
 
                 {updatedPage}
-                <BasicPaper isAdvanced={isAdvanced}/> 
+                <BasicPaper data={recipeData} isAdvanced={isAdvanced}/> 
                 <div className="generate-button">
                     <button 
                         // className="generate-button"

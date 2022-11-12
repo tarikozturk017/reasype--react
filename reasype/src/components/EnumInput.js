@@ -8,6 +8,7 @@ export default function EnumInput(props) {
 
     function handleChange(event) {
         const {name, value} = event.target
+        
         setElem(prevData => ({
             ...prevData,
             // [name]: value
@@ -16,12 +17,12 @@ export default function EnumInput(props) {
     }
 
     function handleEnumChange() {
-        // console.log('setting handle range data: ' + elem.filterElem)
-        setArr(prevData => ([
-            ...prevData,
-            elem.filterElem
-        ]))
-        // console.log('before array is being set the elem is: ' + elem.filterElem)
+        if(elem.filterElem !== '' && !arr.includes(elem.filterElem) && arr.length < 3) {
+            setArr(prevData => ([
+                ...prevData,
+                elem.filterElem
+            ]))     
+        }
         setElem({
             filterElem: ''
         })
