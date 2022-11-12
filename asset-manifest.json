@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/reasype--react/static/css/main.58a3197e.css",
+    "main.js": "/reasype--react/static/js/main.473e3480.js",
+    "static/js/787.c5576521.chunk.js": "/reasype--react/static/js/787.c5576521.chunk.js",
+    "static/media/post.png": "/reasype--react/static/media/post.ebc56d8b278620043cb4.png",
+    "static/media/knife.png": "/reasype--react/static/media/knife.4a79398a4cc35fb5fa88.png",
+    "static/media/fork.png": "/reasype--react/static/media/fork.75afe036696e8b2615ff.png",
+    "static/media/old.webp": "/reasype--react/static/media/old.4bba65430ca196f68ee9.webp",
+    "static/media/background.jpg": "/reasype--react/static/media/background.91dafee6d45d18f464b6.jpg",
+    "index.html": "/reasype--react/index.html",
+    "main.58a3197e.css.map": "/reasype--react/static/css/main.58a3197e.css.map",
+    "main.473e3480.js.map": "/reasype--react/static/js/main.473e3480.js.map",
+    "787.c5576521.chunk.js.map": "/reasype--react/static/js/787.c5576521.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.58a3197e.css",
+    "static/js/main.473e3480.js"
+  ]
+}
