@@ -13,7 +13,6 @@ export default function Recipe(props) {
         let str = ""
         if (arr){
             arr.map(e => str+=`${e} `)
-            // console.log(str);
         }
         return str;
     }
@@ -26,7 +25,6 @@ export default function Recipe(props) {
         return obj;
     }
 
-    // console.log(props.resultRecipe)
     return (
         <div className="recipe--container">
             <div className="recipe--header"><h1>{props.resultRecipe.label}</h1></div>
